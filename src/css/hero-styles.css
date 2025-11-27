@@ -1,0 +1,362 @@
+/* ========================================
+   STYLES HERO - VERSION CORRIGÉE
+   Titre blanc visible + Hero compact
+   ======================================== */
+
+/* Hero COMPACT avec photo de façade */
+.hero {
+    position: relative;
+    min-height: 65vh;
+    margin-top: 0;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    /* Image de fond */
+    background-image: url('../images/facade-hero.jpg');
+    background-size: cover;
+    background-position: center 40%;
+    
+    /* Amélioration des couleurs */
+    filter: contrast(1.25) saturate(1.35) brightness(1.05);
+}
+
+/* Overlay gradient léger */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background: 
+        radial-gradient(ellipse at center 45%, rgba(26, 26, 26, 0.3) 0%, rgba(26, 26, 26, 0.6) 100%),
+        radial-gradient(circle at center 50%, transparent 0%, rgba(0, 0, 0, 0.4) 60%);
+}
+
+/* Contenu Hero CENTRÉ et COMPACT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    padding: 2rem 2.5rem;
+    margin-top: 8vh;
+    
+    /* Fond élégant */
+    background: linear-gradient(135deg, 
+        rgba(26, 26, 26, 0.88) 0%, 
+        rgba(40, 40, 40, 0.92) 100%
+    );
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+    border: 2px solid rgba(255, 184, 0, 0.6);
+    max-width: 650px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.7),
+        0 0 60px rgba(255, 184, 0, 0.2);
+    
+    animation: slideInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Titre en BLANC PUR - BIEN VISIBLE */
+.hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    line-height: 1.2;
+    
+    /* Forcer le blanc avec ombre pour visibilité maximale */
+    text-shadow: 
+        0 3px 15px rgba(0, 0, 0, 1),
+        0 0 40px rgba(255, 184, 0, 0.7),
+        0 0 80px rgba(255, 184, 0, 0.3),
+        0 5px 10px rgba(0, 0, 0, 0.8);
+    
+    animation: fadeInScale 1s ease 0.3s both;
+}
+
+/* Forcer le style blanc pour tous les navigateurs */
+.hero-title * {
+    color: #FFFFFF !important;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Sous-titre COMPACT */
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.6rem;
+    color: #FFFFFF;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    
+    text-shadow: 
+        0 2px 10px rgba(0, 0, 0, 1),
+        0 0 20px rgba(255, 255, 255, 0.3);
+    
+    animation: fadeIn 1s ease 0.5s both;
+}
+
+/* Slogan en OR éclatant - COMPACT */
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--color-secondary);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    
+    text-shadow: 
+        0 2px 8px rgba(0, 0, 0, 1),
+        0 0 30px rgba(255, 184, 0, 0.8),
+        0 0 50px rgba(255, 184, 0, 0.4);
+    
+    animation: fadeIn 1s ease 0.7s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Séparateur élégant - PLUS PETIT */
+.hero-description::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--color-secondary), 
+        var(--color-primary), 
+        var(--color-secondary), 
+        transparent
+    );
+    margin: 1rem auto 0;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 184, 0, 0.6);
+}
+
+/* Boutons COMPACTS */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeIn 1s ease 0.9s both;
+}
+
+.hero-buttons .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Bouton primaire */
+.hero-buttons .btn-primary {
+    background: linear-gradient(135deg, 
+        var(--color-primary) 0%, 
+        var(--color-secondary) 100%
+    );
+    color: var(--color-white);
+    box-shadow: 
+        0 10px 30px rgba(255, 107, 53, 0.5),
+        0 0 40px rgba(255, 184, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.hero-buttons .btn-primary:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 12px 40px rgba(255, 107, 53, 0.7),
+        0 0 50px rgba(255, 184, 0, 0.5);
+}
+
+/* Bouton secondaire */
+.hero-buttons .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: var(--color-white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons .btn-secondary:hover {
+    background: var(--color-white);
+    color: var(--color-dark);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* Particules subtiles */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 20% 30%, rgba(255, 184, 0, 0.2), transparent),
+        radial-gradient(1px 1px at 80% 70%, rgba(255, 107, 53, 0.2), transparent);
+    background-size: 400% 400%;
+    animation: sparkleFlow 25s ease-in-out infinite;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+@keyframes sparkleFlow {
+    0%, 100% { background-position: 0% 0%, 100% 100%; }
+    50% { background-position: 100% 100%, 0% 0%; }
+}
+
+/* Responsive - Tablette */
+@media (max-width: 1024px) {
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero-content {
+        padding: 1.8rem 2rem;
+        max-width: 550px;
+        margin-top: 6vh;
+    }
+    
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 55vh;
+        background-position: center 45%;
+    }
+    
+    .hero-title {
+        font-size: 1.9rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .hero-content {
+        padding: 1.5rem;
+        margin: 5vh 1rem 0 1rem;
+        max-width: 100%;
+        background: rgba(26, 26, 26, 0.92);
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        padding: 11px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-overlay {
+        background: 
+            radial-gradient(ellipse at center 45%, rgba(26, 26, 26, 0.4) 0%, rgba(26, 26, 26, 0.7) 100%);
+    }
+}
+
+/* Petit mobile */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 50vh;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-content {
+        margin-top: 4vh;
+        padding: 1.3rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .hero {
+        background-attachment: fixed;
+        min-height: 68vh;
+    }
+    
+    .hero-content {
+        margin-top: 10vh;
+    }
+}
+
+/* Très grand écran */
+@media (min-width: 1400px) {
+    .hero {
+        min-height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-description {
+        font-size: 1.3rem;
+    }
+    
+    .hero-content {
+        max-width: 700px;
+        padding: 2.5rem 3rem;
+    }
+}
